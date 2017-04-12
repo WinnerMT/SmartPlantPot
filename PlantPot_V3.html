@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>My Plant Pot</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="CSS/jquery.mobile-1.4.5.min.css">
+	<script src="jquery-2.2.0.min.js"></script>
+	<script src="jquery.mobile-1.4.5.min.js"></script>  
+    <link href="CSS/style.css" rel="stylesheet">
+    <script src="https://netpie.io/microgear.js"></script>
+	<script src="js/raphael-2.1.4.min.js"></script>
+	<script src="js/justgage.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!--*****************************Javascript*********************************-->
+	<script>
+		var plant,temp,humi,soil;
+		window.onload = function(){
+
+			
+			humi = new JustGage({
+				id: "humi",
+				value: 0.0,
+				decimals: 2,
+				min: 0.0,
+				max: 100.0,
+				title: "Humidity",
+				label: "%",
+				labelFontColor:"#FA8072",
+				titleFontColor:"#00BFFF",
+				valueFontColor:"#00BFFF",
+				showMinMax:true
+
+			});
+			soil = new JustGage({
+				id: "soil",
+				value: 0.0,
+				decimals: 2,
+				min: 0.0,
+				max: 100.0,
+				title: "Soil Moisture",
+				label: "%",
+				labelFontColor:"#FA8072",
+				titleFontColor:"#3CB371",
+				valueFontColor:"#3CB371",
+				showMinMax:true
+
+			});
+			tempp = new JustGage({
+				id: "tempp",
+				value: 0.0,
+				decimals: 2,
+				min: 0.0,
+				max: 100.0,
+				title: "Temperature",
+				label: "Deegree Celcuis",
+				labelFontColor:"#FA8072",
+				titleFontColor:"#FF8C00",
+				valueFontColor:"#FF8C00",
+				showMinMax:true
+
+			});
+		};
+	</script>
+		<style type="text/css">
+		body {
+			background: url(BG2.jpg) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+		.ui-page 
+		{
+			background: transparent;
+		}
+		.ui-content
+		{
+			background: transparent;
+		}
+	</style>
+	<script>
+	const APPID     = "PlantPots";
+  	const APPKEY    = "uWluhcv7ylMHPa6";
+  	const APPSECRET = "w4yUyoIicwgkVyWGOh81wxvFz";
+
+	var microgear = Microgear.create({
+        key: APPKEY ,
+        secret: APPSECRET,
+        alias : "WEBconsole"
+	});
+
+	function sendMsg()
+		{
+			 microgear.chat("esp8266","PumpOn");			
+		}
+
+	microgear.on('message',function(topic,msg) {
+
+		var split_msg = msg.split(",");
+		//console.log(msg);
+
+		/*if (split_msg[3] == 'node1')
+		{
+			var node1_msg = msg.split(",");
+		}
+		else if(split_msg[3] == 'node2')
+		{
+			var node2_msg = msg.split(",");
+		}
+		else if(split_msg[3] == 'node3')
+		{
+			var node3_msg = msg.split(",");
+		}
+		else if(split_msg[3] == 'node4')
+		{
+			var node4_msg = msg.split(",");
+		}
+		else if(split_msg[3] == 'node5')
+		{
+			var node5_msg = msg.split(",");
+		}*/
+		 
+
+		switch(split_msg[3]){
+			case 'test1': 
+				//document.getElementById("data").innerHTML = "<FONT color=#00BB00>ONLINE</FONT>";
+				tempp.refresh(split_msg[0]);
+				humi.refresh(split_msg[1]);
+				soil.refresh(split_msg[2]);	
+				break;
+			case 'node2':
+				document.getElementById("data2").innerHTML = "<FONT color=#00BB00>ONLINE</FONT>";
+				temp2.refresh(node2_msg[0]);
+				humid2.refresh(node2_msg[1]);
+				ftemp2.refresh(node2_msg[2]);
+				break;
+			case 'node3':
+				document.getElementById("data3").innerHTML = "<FONT color=#00BB00>ONLINE</FONT>";
+				temp3.refresh(node3_msg[0]);
+				humid3.refresh(node3_msg[1]);
+				ftemp3.refresh(node3_msg[2]);
+				break;
+			case 'node4':
+				document.getElementById("data4").innerHTML = "<FONT color=#00BB00>ONLINE</FONT>";
+				temp4.refresh(node4_msg[0]);
+				humid4.refresh(node4_msg[1]);
+				ftemp4.refresh(node4_msg[2]);
+				break;	
+			case 'node5':
+				document.getElementById("data5").innerHTML = "<FONT color=#00BB00>ONLINE</FONT>";
+				temp5.refresh(node5_msg[0]);
+				humid5.refresh(node5_msg[1]);
+				ftemp5.refresh(node5_msg[2]);
+				break;				
+			default : 
+
+		}
+
+	});
+
+	microgear.on('connected', function() {
+		microgear.subscribe("/esp8266");
+		microgear.subscribe("/node2");
+		microgear.subscribe("/node3");
+		microgear.subscribe("/node4");
+		microgear.subscribe("/node5");
+		//document.getElementById("data").innerHTML = "<FONT color=#00BB00>ONLINE</FONT>";
+	});
+
+	microgear.on('disconnected', function() {
+		//document.getElementById("data").innerHTML = "<FONT color=#00BB00>OFFLINE</FONT>";
+	});
+
+	microgear.connect(APPID);
+
+</script>
+<style>
+		img{ max-width:100%; border:none;}
+		.pic{ float:center; width:95%; margin:2% 0%;}
+	</style>
+	<!--*****************************End Javascript*********************************-->
+
+	<!--*********************************HEADER********************************** -->
+		<center><div class="pic"><img = src = "Header.png"></div></center>
+	<!--************************************************************************* -->
+	<!--**********************************BODY********************************** -->
+
+		<center><button  class="ui-shadow ui-btn-inline ui-nodisc-icon ui-alt-icon ui-btn ui-corner-all ui-icon-arrow-r ui-btn-icon-left ui-mini" onclick="sendMsg()" ><h2><FONT FACE = "TH Baijam" Color = ForestGreen>กดเพื่อรดน้ำ</FONT></h2></button></center>
+		<div id="tempp"></div>
+		<div id="humi"></div>
+		<div id="soil"></div>
+	<!--************************************************************************ -->
+
+	

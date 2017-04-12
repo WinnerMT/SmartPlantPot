@@ -1,0 +1,221 @@
+	body {
+		text-align:center;
+		background:#f8f8f8;
+		color:#FFF;
+	}
+
+/*------------------------------- FOR NODE 1 ------------------------------ */
+
+	#framename {
+		width:404px; height:160px;
+		display: inline-block;
+		margin:0 0 2px 0;
+		background-color:lightsalmon;
+	}
+
+	#humid {
+		width:200px; height:160px;
+		display: inline-block;
+		margin:2px 2px 0 0;
+	}
+	#temp {
+		width:200px; height:160px;
+		display: inline-block;
+		margin:0 2px 2px 0;
+	}
+	#ftemp {
+		background-color:cornflowerblue;
+		width:404px; height:324px;
+		display: inline-block;
+	}
+
+	#temp {
+		background-color:crimson;
+	}
+
+	#humid {
+		background-color:#efad4d;
+	}
+
+
+/*------------------------------- FOR NODE 2 ------------------------------ */
+
+	#framename2 {
+		width:404px; height:160px;
+		display: inline-block;
+		margin:0 0 2px 0;
+		background-color:navajowhite ;
+	}
+
+	#humid2 {
+		width:200px; height:160px;
+		display: inline-block;
+		margin:2px 2px 0 0;
+	}
+	#temp2 {
+		width:200px; height:160px;
+		display: inline-block;
+		margin:0 2px 2px 0;
+	}
+	#ftemp2 {
+		background-color:cornflowerblue;
+		width:404px; height:324px;
+		display: inline-block;
+	}
+
+	#temp2 {
+		background-color:crimson;
+	}
+
+	#humid2 {
+		background-color:#efad4d;
+	}
+
+
+/*------------------------------- FOR NODE 3 ------------------------------ */
+
+    #framename3 {
+		width:404px; height:160px;
+		display: inline-block;
+		margin:0 0 2px 0;
+		background-color:indianred ;
+	}
+
+	#humid3 {
+		width:200px; height:160px;
+		display: inline-block;
+		margin:2px 2px 0 0;
+	}
+
+	#temp3 {
+		width:200px; height:160px;
+		display: inline-block;
+		margin:0 2px 2px 0;
+	}
+
+	#ftemp3 {
+		background-color:cornflowerblue;
+		width:404px; height:324px;
+		display: inline-block;
+	}
+
+	#temp3 {
+		background-color:crimson;
+	}
+
+	#humid3 {
+		background-color:#efad4d;
+	}
+
+
+/*------------------------------- FOR NODE 4 ------------------------------ */
+
+    #framename4 {
+		width:404px; height:160px;
+		display: inline-block;
+		margin:0 0 2px 0;
+		background-color:pink;
+	}
+
+	#humid4 {
+		width:200px; height:160px;
+		display: inline-block;
+		margin:2px 2px 0 0;
+	}
+
+	#temp4 {
+		width:200px; height:160px;
+		display: inline-block;
+		margin:0 2px 2px 0;
+	}
+
+	#ftemp4 {
+		background-color:cornflowerblue;
+		width:404px; height:324px;
+		display: inline-block;
+	}
+
+	#temp4 {
+		background-color:crimson;
+	}
+
+	#humid4 {
+		background-color:#efad4d;
+	}	
+
+
+/*------------------------------- FOR NODE 5 ------------------------------ */
+
+    #framename5 {
+		width:404px; height:160px;
+		display: inline-block;
+		margin:0 0 2px 0;
+		background-color:hotpink ;
+	}
+
+	#humid5 {
+		width:200px; height:160px;
+		display: inline-block;
+		margin:2px 2px 0 0;
+	}
+
+	#temp5 {
+		width:200px; height:160px;
+		display: inline-block;
+		margin:0 2px 2px 0;
+	}
+
+	#ftemp5 {
+		background-color:cornflowerblue;
+		width:404px; height:324px;
+		display: inline-block;
+	}
+
+	#temp5 {
+		background-color:crimson;
+	}
+
+	#humid5 {
+		background-color:#efad4d;
+	}
+
+
+
+/*------------------------------- FOR ALL ------------------------------ */
+
+	#topicname {
+		font-size:70px;
+		font-weight:bold;
+		color: white;
+	}
+
+	#row {
+		display:table-row;
+	}
+
+	#logo {
+		width:300px; 
+		height:250px;
+		display: inline-block;
+	}
+
+	#currenttime {
+		font-size: 24px;
+		color: #808080;
+	}
+
+	#line { 
+		text-align: center;
+		border-bottom-style: dashed; 
+		color: #cccccc; 
+		width: 75%;
+		margin:20px 0px 25px 0;
+	}
+
+	#linehide { 
+		text-align: center;
+		border-bottom-style: none; 
+		//color: #cccccc; 
+		width: 75%;
+		margin:20px 0px 25px 0;
+	}
