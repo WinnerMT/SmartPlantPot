@@ -35,9 +35,9 @@ time_t getNtpTime();
 const char* ssid     = "RICH_2G4r";
 const char* password = "27/14GtechRICH";
 
-#define APPID   "PlantPots"
-#define KEY     "wd4YlkkHGs4FNed"
-#define SECRET  "PXxOq4MHnCG8VCVBRwwVVCQNx"
+#define APPID   "" //APP ID ของ NETPIE ก๊อบมาวางเลย 
+#define KEY     "" // APP KEY ของ NETPIE ก๊อบมาวางเลย
+#define SECRET  "" // APP SECRET ของ NETPIE ก๊อบมาวางเลย
 #define ALIAS   "/esp8266"
 
 WiFiClient client;
